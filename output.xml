@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.10.1 on linux)" generated="20211209 16:21:41.493" rpa="false" schemaversion="2">
+<suite id="s1" name="Browser" source="/home/dhilipsiva/projects/reckonsys/robot-intro/browser">
+<suite id="s1-s1" name="Simple" source="/home/dhilipsiva/projects/reckonsys/robot-intro/browser/simple.robot">
+<test id="s1-s1-t1" name="b64 encode reckonsys">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>url=https://www.base64encode.org/</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211209 16:21:41.677" level="INFO">Opening browser 'firefox' to base url 'https://www.base64encode.org/'.</msg>
+<msg timestamp="20211209 16:21:41.678" level="INFO">Firefox driver log is always forced to to: /home/dhilipsiva/projects/reckonsys/robot-intro/geckodriver-6.log</msg>
+<status status="PASS" starttime="20211209 16:21:41.676" endtime="20211209 16:22:12.960"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:input</arg>
+<arg>reckonsys</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211209 16:22:12.964" level="INFO">Typing text 'reckonsys' into text field 'id:input'.</msg>
+<status status="PASS" starttime="20211209 16:22:12.962" endtime="20211209 16:22:13.082"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:submit_text</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211209 16:22:13.082" level="INFO">Clicking button 'id:submit_text'.</msg>
+<status status="PASS" starttime="20211209 16:22:13.082" endtime="20211209 16:22:13.698"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211209 16:22:14.699" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211209 16:22:13.698" endtime="20211209 16:22:14.700"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${encoded}</var>
+<arg>id:output</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20211209 16:22:14.843" level="INFO">${encoded} = cmVja29uc3lz</msg>
+<status status="PASS" starttime="20211209 16:22:14.701" endtime="20211209 16:22:14.843"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${encoded}</arg>
+<arg>cmVja29uc3lz</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20211209 16:22:14.843" endtime="20211209 16:22:14.844"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211209 16:22:15.002" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211209 16:22:14.844" endtime="20211209 16:22:15.002"/>
+</kw>
+<kw name="My Keyword">
+<kw name="Log" library="BuiltIn">
+<arg>foo</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20211209 16:22:15.003" level="INFO">foo</msg>
+<status status="PASS" starttime="20211209 16:22:15.003" endtime="20211209 16:22:15.003"/>
+</kw>
+<status status="PASS" starttime="20211209 16:22:15.003" endtime="20211209 16:22:15.004"/>
+</kw>
+<status status="PASS" starttime="20211209 16:21:41.675" endtime="20211209 16:22:15.004"/>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20211209 16:22:15.005" endtime="20211209 16:22:15.731"/>
+</kw>
+<status status="PASS" starttime="20211209 16:21:41.526" endtime="20211209 16:22:15.731"/>
+</suite>
+<status status="PASS" starttime="20211209 16:21:41.495" endtime="20211209 16:22:15.733"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Browser">Browser</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Simple">Browser.Simple</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
