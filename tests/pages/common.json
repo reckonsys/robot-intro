@@ -1,0 +1,6 @@
+{
+  "LoginPage": {
+    "userInput": "id:login-page-username",
+    "dismissUpdatePopupBtn": "xpath://button[text()='Dismiss']/.."
+  }
+}
